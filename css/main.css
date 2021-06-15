@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background-color: #222;
+  color: #fff;
+}
+
+.wrapper {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.hero-img {
+  object-fit: cover;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 98vh;
+  position: relative;
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+  grid-template: 1fr 1fr 1fr 1fr 1fr/1fr 1fr;
+}
+.hero-img header {
+  grid-area: 1/1/2/3;
+  justify-content: center;
+  text-align: center;
+}
+.hero-img header a {
+  font: 3rem/3 "Times New Roman", Times, serif;
+  text-decoration: none;
+}
+.hero-img .title {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 30vw;
+  height: 30vw;
+  background: #ff0;
+  border-radius: 50%;
+  color: #000;
+  z-index: 3;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 6vw;
+  font-weight: 100;
+}
+@media (max-width: 800px) {
+  .hero-img .title {
+    width: 60vw;
+    height: 60vw;
+    font-size: 12vw;
+  }
+}
+.hero-img .title span {
+  background: #ff0;
+  color: #000;
+  font-size: 2vw;
+}
+.hero-img img {
+  object-fit: cover;
+}
+.hero-img img.present {
+  grid-area: 3/2/5/3;
+  width: 100%;
+}
+.hero-img img.future {
+  grid-area: 2/1/4/2;
+  justify-self: end;
+}
+.hero-img img.past {
+  grid-area: 4/1/5/2;
+  width: 100%;
+}
+.hero-img .sub-title {
+  align-self: end;
+  color: #ff0;
+  font-size: max(14px, 2vw);
+  margin-left: 2rem;
+}
+.hero-img .reporter-name {
+  font-size: max(12px, 2.5vw);
+  align-self: center;
+  margin-left: 2rem;
+}
+.hero-img .social-network-icons {
+  justify-self: end;
+  align-self: center;
+  margin-right: 2rem;
+}
+.hero-img .social-network-icons ul {
+  list-style: none;
+  display: flex;
+}
+.hero-img .social-network-icons ul li {
+  margin-left: 1rem;
+}
+.hero-img .social-network-icons ul li > a {
+  text-decoration: none;
+}
+
+.introduction {
+  max-width: 60ch;
+  margin: 10rem auto;
+  padding: 1rem;
+  font: 1.5rem/1.7 sans-serif;
+  word-spacing: 1px;
+  letter-spacing: 0.2px;
+  text-align: justify;
+}
+@media (max-width: 500px) {
+  .introduction {
+    text-align: right;
+  }
+}
+.introduction .btn.read-more {
+  display: block;
+  position: relative;
+  width: 100%;
+  outline: none;
+  border: none;
+  font: 600 1.4rem/4 sans-serif;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.introduction .btn.read-more img {
+  transform: scale(2);
+}
+.introduction .photographer {
+  color: #ff0;
+  text-align: center;
+  font-size: 1.4rem;
+}
+.introduction .hidden-section {
+  display: none;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+}
+
+.map {
+  position: sticky;
+  align-self: start;
+  top: 20vh;
+  margin: 2rem;
+}
+
+.segments {
+  position: relative;
+  background-color: transparent;
+  margin: 2rem;
+}
+.segments * {
+  background-color: transparent;
+}
+.segments .segment__intro {
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  background: linear-gradient(#0000, #000a, #0000);
+  box-shadow: 0 0 19px 3px #000a;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+.segments .segment__intro p {
+  font-size: 3rem;
+}
+.segments .segment__intro h1 {
+  font-size: 6rem;
+  color: #ff0;
+  margin-top: 0;
+}
+.segments .segment__point {
+  margin-top: 40rem;
+}
+.segments .point__text {
+  position: relative;
+  z-index: 10;
+  background-color: #222;
+  margin-block: 3rem;
+  padding: 3rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 19px 3px #000a;
+}
+.segments .point__text h1 {
+  color: #ff0;
+  font-size: 4rem;
+  margin: 0;
+}
+.segments .point__text h2 {
+  font-size: 2rem;
+}
+.segments .point__text p {
+  font: 1.3rem/1.5 sans-serif;
+  word-spacing: 0.5px;
+  letter-spacing: 0.1px;
+  text-align: justify;
+}
+@media (max-width: 500px) {
+  .segments .point__text p {
+    text-align: right;
+  }
+}
+.segments .point__images figure.is-empty {
+  padding-top: 56.25%;
+  position: relative;
+  width: calc(100% - 6rem);
+}
+
+figure {
+  padding-top: 0;
+  position: absolute;
+  margin: 2rem auto;
+  border-radius: 2rem;
+}
+
+figcaption {
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 1rem;
+  background-color: #0008;
+  border-block: 2px solid #fffc;
+  text-align: center;
+  font-size: 1.4rem;
+  padding-block: 0.3rem;
+}
+
+figure > img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+}
+
+svg {
+  box-shadow: 0 0 19px 3px #000a;
+  border-radius: 2rem;
+}
+
+/*# sourceMappingURL=main.css.map */
